@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>First Page</title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    </head>
+    <body>
+
+        <a href="index.html">
+         Home Page
+        </a>
+        &nbsp;
+        <a href="aboutme.html">
+         About Me
+        </a>
+        &nbsp;
+        <a href="contact.html" class="green_link">
+         Contact Me
+        </a>
+
+        <hr>
+
+        <div class="container">
+        <h1>My first page boooo</h1>
+        <!-- Pops up window that says hello when you click on the h1 "Hello" -->
+        <!--<h1 id="title" onclick="alert('hello')";>Hello</h1> -->
+
+        <!-- Prints "hello" to the console when you click on the h1 "Hello" -->
+        <!-- <h1 id="title" onclick="console.log('hello')";>Hello</h1> -->
+
+        <!-- Changes h1 "Hello" to "BYE" when you click on it by using jquery (script tag is above FYI) -->
+        <!-- <h1 id="title" onclick="$('#title').html('BYE');">Hello</h1> -->
+
+        <!-- Immediately changes content of h1 tag with #title id to "Goodbye" when page loads
+        <h1 id="title"> Hello </h1>
+        // <script type="text/javascript">$('#title').html('Goodbye');</script>
+        -->
+
+        <!-- Changes "Hello" in h1/title to Goodbye based on function being ran upon the click. Function defined below in script tags.
+        <h1 id="title" onclick="sayHello();"> Hello </h1>
+        <script type="text/javascript">
+        function sayHello() {
+            $('#title').html('Goodbye');
+        };
+        </script>
+        -->
+
+        <!-- Passes the click() function into the sayGoodbye() function to toggle back and forth between "Hello" and "Goodbye" upon clicking -->
+        <h1 id="title" onclick="sayGoodbye();">Hello</h1>
+        <script type="text/javascript">
+    function sayGoodbye(){
+        console.log("goodbye");
+        $("#title").html("Goodbye");
+        $("#title").click(function () {
+            $("#title").html("Hello");
+            $("#title").off("click");
+        });
+    };
+</script>
+
+
+        <h2>Subtitle</h2>
+        <div class="row">
+            <div class="col-md-12">
+                Donut tootsie roll lollipop apple pie. Gummi bears cupcake pie croissant marzipan lollipop carrot cake pie tootsie roll.
+                Oat cake marshmallow liquorice macaroon cake chocolate dessert. Icing icing muffin toffee. Cake bear claw marshmallow bonbon. Caramels tootsie roll halvah marshmallow toffee marshmallow. Donut brownie jelly-o cotton candy. Marzipan candy canes topping jelly jelly beans muffin wafer. Sesame snaps tootsie roll jujubes fruitcake fruitcake chocolate. Danish cake danish croissant candy macaroon cotton candy carrot cake jelly. Marzipan cheesecake pastry gingerbread danish bear claw jelly. Fruitcake macaroon cake halvah. Gummi bears liquorice tiramisu jujubes gummi bears cake sweet roll.
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
