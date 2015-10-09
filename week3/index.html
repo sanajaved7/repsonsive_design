@@ -7,6 +7,8 @@
     </head>
     <body>
 
+        <div class="container">
+
         <a href="index.html">
          Home Page
         </a>
@@ -21,8 +23,6 @@
 
         <hr>
 
-        <div class="container">
-        <h1>Title</h1>
         <!-- Pops up window that says hello when you click on the h1 "Hello" -->
         <!--<h1 id="title" onclick="alert('hello')";>Hello</h1> -->
 
@@ -46,27 +46,62 @@
         </script>
         -->
 
-        <!-- Passes the click() function into the sayGoodbye() function to toggle back and forth between "Hello" and "Goodbye" upon clicking -->
-        <h1 id="title" onclick="sayGoodbye();">Hello</h1>
+        <!-- Passes the click() function into the sayGoodbye() function to toggle back and forth between "Hello" and "Goodbye" upon clicking
+        <h1 id="title" onclick="sayGoodbye();">Hello, World</h1>
+
         <script type="text/javascript">
     function sayGoodbye(){
         console.log("goodbye");
-        $("#title").html("Goodbye");
+        $("#title").html("See ya later!");
         $("#title").click(function () {
-            $("#title").html("Hello");
+            $("#title").html("Hello, World");
             $("#title").off("click");
         });
     };
-</script>
+</script>-->
 
+   <h1><strong>Welcome to My Mini Image Gallery!</strong></h1>
 
-        <h2>Subtitle</h2>
         <div class="row">
-            <div class="col-md-12">
-                Donut tootsie roll lollipop apple pie. Gummi bears cupcake pie croissant marzipan lollipop carrot cake pie tootsie roll.
-                Oat cake marshmallow liquorice macaroon cake chocolate dessert. Icing icing muffin toffee. Cake bear claw marshmallow bonbon. Caramels tootsie roll halvah marshmallow toffee marshmallow. Donut brownie jelly-o cotton candy. Marzipan candy canes topping jelly jelly beans muffin wafer. Sesame snaps tootsie roll jujubes fruitcake fruitcake chocolate. Danish cake danish croissant candy macaroon cotton candy carrot cake jelly. Marzipan cheesecake pastry gingerbread danish bear claw jelly. Fruitcake macaroon cake halvah. Gummi bears liquorice tiramisu jujubes gummi bears cake sweet roll.
-            </div>
+                <div class="col-md-3">
+                    <img class="crop-img"
+                      src="coffee-camera.jpeg"
+                      alt="cup of coffee and camera on table"/>
+                </div>
+                <div class="col-md-3">
+                    <img class="crop-img"
+                      src="jellyfish.jpeg"
+                      alt="beautiful jellyfish in ocean"/>
+                </div>
+                <div class="col-md-3">
+                    <img class="crop-img"
+                      src="stars.jpeg"
+                      alt="scenic view of stars at night"/>
+                </div>
+                <div class="col-md-3">
+                    <img class="crop-img"
+                       src="bridge.jpeg"
+                       alt="people walking on bridge"/>
+                </div>
+        </div>
+        <div class="row">
+                <div class="col-md-12">
+                    <img id="bigImage"
+                      class="large-img"
+                      src="stars.jpeg"
+                      alt="scenic view of stars at night"/>
+                </div>
         </div>
     </div>
+    <script>
+        // This loads the same
+        // image file into the big image
+        $(".crop-img").click(function(){
+            $("#bigImage").attr('src',
+                $(this).attr('src'));
+        });
+    </script>
+
+
     </body>
 </html>
