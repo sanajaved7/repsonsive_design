@@ -1,0 +1,41 @@
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: green;
+}
+
+h3 {
+    color: navy;
+}
+
+#crop {
+    max-height: 220px;
+    max-width: 200px;
+}
+
+#img-modal {
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#description{
+    font-family: monospace;
+    font-weight: bold;
+}
+
+@media (max-width: 500px) {
+    h1, h2, h3, p {
+        text-align: center;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
