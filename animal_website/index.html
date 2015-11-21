@@ -1,0 +1,116 @@
+<!-- This is a first example of using a template -->
+
+<head>
+
+<!-- include our libraries and css files -->
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="AnimalsData.js"></script>
+<script src="assignment.js"></script>
+<script src="js/animals.js"></script>
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="assignment.css" rel="stylesheet">
+
+<title>Animals!</title>
+
+</head>
+
+<div id="nav">
+</div>
+
+<body>
+    <div class="container">
+    <h1>Cool Animals of the World!</h1>
+    <hr>
+    </div>
+    <div class="row">
+        <div class="container" id="content">
+        </div>
+    </div>
+
+<script id="nav_template" type="text/x-handlebars-template">
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Animals!</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        {{#each category}}
+        <li><a href="#{{name}}">{{name}}</a></li>
+        {{/each}}
+      </ul>
+    </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
+</script>
+
+<script id = "animals-template" type="text/x-handlebars-template">
+    <div class="col-lg-6 col-md-4 col-sm-12">
+    {{#each category}}
+        <a name="{{name}}"></a>
+        <h2> {{name}} </h2>
+        {{#each animals}}
+            <h3> {{name}} </h3>
+            <p class="animal_picture"><a href="#">Image of {{name}}</a></p>
+            <div class="modal fade imageModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">{{name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        <img id="img-modal" src="{{image1}}"/>
+                        <br>
+                        <img id="img-modal" src="{{image2}}"/>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+
+            <p class="animal_description"><a href="#">Desription of {{name}}</a></p>
+            <div class="modal fade descriptionModal">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">{{name}}</h4>
+                      </div>
+                      <div class="modal-body">
+                        <p id="description">{{description}}</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div><!-- /.modal-content -->
+                  </div><!-- /.modal-dialog -->
+                </div><!-- /.modal -->
+            <br>
+        {{/each}}
+        <hr>
+    {{/each}}
+    </div>
+    <div class="col-lg-6 col-md-8 col-sm-12">
+        {{#each category}}
+            {{#each animals}}
+                <img id="crop" src="{{image1}}"/>
+                <img id="crop" src="{{image2}}"/>
+            {{/each}}
+        {{/each}}
+    </div>
+</script>
